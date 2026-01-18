@@ -56,14 +56,14 @@ const ProjectInfoDrawer = (p: ProjectInfoDrawerProps) => {
           <TableList
             header={$currentProject?.title}
             items={[
-              ...spreadInto('Publisert', $currentProject?.publishedYear),
-              ...spreadInto('Kvadratmeter', $currentProject?.squareFootage),
-              ...spreadInto('Medforfattere', authors?.join(', ')),
+              ...spreadInto('Published', $currentProject?.publishedYear),
+              //...spreadInto('m2', $currentProject?.squareFootage),
+              ...spreadInto('co authors', authors?.join(', ')),
               ...spreadInto(
-                'Oppdragstype',
+                'Assignment',
                 assignmentTranslator[$currentProject?.assignmentType]
               ),
-              ...spreadInto('Oppsummering', $currentProject?.summary),
+              ...spreadInto('Summary', $currentProject?.summary),
             ]}
           />
         </SheetHeader>
